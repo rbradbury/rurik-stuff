@@ -21,6 +21,8 @@
   .pillar-evidence ul { margin: 0; padding-left: 16px; }
   .pillar-evidence li { margin-bottom: 6px; }
   .src { color: #94a3b8; font-size: 11px; display: block; margin-top: 2px; }
+  .src a { color: inherit; text-decoration: underline; }
+  .src a:hover { color: #64748b; }
   .note { color: #888; font-size: 12px; font-style: italic; margin-top: 14px; }
 </style>
 </head>
@@ -371,5 +373,23 @@
   <div class="note">Note: Evertrace's homepage is built around three explicit section headers (How it works / Agents / Workflows / Integrations). I rolled Integrations into the Workflows pillar and added the customer-base proof as Pillar 4.</div>
 </div>
 
+<script>
+  document.querySelectorAll('.src').forEach(function(span) {
+    var text = span.textContent;
+    var match = text.match(/^([a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\/[^\s(]*)?)/);
+    if (match) {
+      var urlPart = match[1];
+      var rest = text.slice(urlPart.length);
+      var a = document.createElement('a');
+      a.href = 'https://' + urlPart;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = urlPart;
+      span.textContent = '';
+      span.appendChild(a);
+      if (rest) span.appendChild(document.createTextNode(rest));
+    }
+  });
+</script>
 </body>
 </html>
