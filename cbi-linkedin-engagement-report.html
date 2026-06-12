@@ -127,7 +127,7 @@ body {
   line-height: 1.1;
   letter-spacing: -1.28px;
   color: #000000;
-  max-width: 760px;
+  max-width: 80%;
   margin-bottom: 24px;
 }
 .hero-headline em {
@@ -139,7 +139,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--grey-six);
-  max-width: 600px;
+  max-width: 80%;
   margin-bottom: var(--space-7);
 }
 .hero-meta {
@@ -465,41 +465,18 @@ body {
   <section class="hero">
     <div class="hero-eyebrow">Organic performance · 150 days</div>
     <h1 class="hero-headline">Organic reach <em>4×</em> higher since resuming posting in May</h1>
-    <p class="hero-body">LinkedIn organic engagement from Jan 10 to Jun 8, 2026, split into three equal 50-day segments to surface momentum, turning points, and what content is working.</p>
+    <p class="hero-body" style="margin-top: var(--space-4);">The three segments of this testing period are essentially:</p>
+    <ul class="hero-body" style="margin-top: var(--space-2); padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 4px;">
+      <li><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#4cabce; margin-right:8px; vertical-align:middle;"></span><strong>Segment 1</strong> — with Saltzman posting</li>
+      <li><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#017b90; margin-right:8px; vertical-align:middle;"></span><strong>Segment 2</strong> — post-Saltzman pause</li>
+      <li><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#0a4663; margin-right:8px; vertical-align:middle;"></span><strong>Segment 3</strong> — new social strategy live</li>
+    </ul>
     <div class="hero-meta">Jan 10 – Jun 8, 2026 &nbsp;·&nbsp; Organic data only &nbsp;·&nbsp; Sponsored metrics excluded</div>
   </section>
 
-  <!-- STAT ROW -->
-  <div class="stat-row" id="stat-row">
-    <div class="stat-cell">
-      <div class="stat-label">Total impressions</div>
-      <div class="stat-numeral" id="k-imp">—</div>
-      <div class="stat-sub">organic, 150 days</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-label">Total clicks</div>
-      <div class="stat-numeral" id="k-clk">—</div>
-      <div class="stat-sub">organic</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-label">Total reactions</div>
-      <div class="stat-numeral" id="k-rea">—</div>
-      <div class="stat-sub">organic</div>
-    </div>
-    <div class="stat-cell featured">
-      <div class="stat-label">S3 click rate</div>
-      <div class="stat-numeral" id="k-ctr">—</div>
-      <div class="stat-sub">vs 2.8% in S1</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-label">Peak single day</div>
-      <div class="stat-numeral" style="font-size:28px; letter-spacing: -0.3px;">May 6</div>
-      <div class="stat-sub">4,760 impressions</div>
-    </div>
-  </div>
-
   <!-- SEGMENT COMPARISON -->
   <section class="section">
+    <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--space-4);">LinkedIn organic engagement from Jan 10 to Jun 8, 2026, split into three equal 50-day segments to surface momentum, turning points, and what content is working.</p>
     <div class="section-eyebrow">Period comparison</div>
     <h2 class="section-title">Segment-by-segment breakdown</h2>
     <div class="data-table-wrap">
@@ -676,11 +653,7 @@ function avgEng(arr){ const v=arr.map(d=>Math.max(0,d.engRate)).filter(v=>v>0); 
 
 /* ── KPIs ── */
 const totImp=sumPos(raw,'impressions'), totClk=sumPos(raw,'clicks'), totRea=sumPos(raw,'reactions');
-document.getElementById('k-imp').textContent = '97.5K';
-document.getElementById('k-clk').textContent = '2,487';
-document.getElementById('k-rea').textContent = '839';
 const ctr3val = (sumPos(segs[2],'clicks')/sumPos(segs[2],'impressions')*100).toFixed(1)+'%';
-document.getElementById('k-ctr').textContent = ctr3val;
 document.getElementById('ins-ctr3').textContent = ctr3val;
 document.getElementById('ins-social').textContent = '36';
 
@@ -697,7 +670,7 @@ segs.forEach((seg,i)=>{
       <span class="seg-name">
         <span class="seg-dot" style="background:${segColors[i]}"></span>
         ${segLabel(seg)}
-        ${i===2?'<span class="badge-latest">Latest</span>':''}
+        ${i===2?'<span class="badge-latest">New strategy</span>':''}
       </span>
     </td>
     <td>${imp.toLocaleString()}${pct}</td>
