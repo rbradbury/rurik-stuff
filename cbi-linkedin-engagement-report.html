@@ -819,9 +819,9 @@ new Chart(document.getElementById('barChart'),{
   data:{
     labels: segLabels,
     datasets:[
-      { label:'Impressions', data:segs.map(s=>sumPos(s,'impressions')), backgroundColor:['#bbdbe5','#bbdbe5','#bbdbe5'], borderColor:segColors, borderWidth:1.5, borderRadius:4 },
-      { label:'Clicks',      data:segs.map(s=>sumPos(s,'clicks')),      backgroundColor:segColors, borderRadius:4 },
-      { label:'Reactions',   data:segs.map(s=>sumPos(s,'reactions')),   backgroundColor:['#0a4663','#0a4663','#0a4663'], borderRadius:4 }
+      { label:'Impressions', data:segs.map(s=>sumPos(s,'impressions')), backgroundColor:['#bbdbe5','#bbdbe5','#bbdbe5'], borderColor:segColors, borderWidth:1.5, borderRadius:4, yAxisID:'y' },
+      { label:'Clicks',      data:segs.map(s=>sumPos(s,'clicks')),      backgroundColor:segColors, borderRadius:4, yAxisID:'y1' },
+      { label:'Reactions',   data:segs.map(s=>Math.max(0,sumPos(s,'reactions'))), backgroundColor:['#0a4663','#0a4663','#0a4663'], borderRadius:4, yAxisID:'y1' }
     ]
   },
   options:{
@@ -831,7 +831,8 @@ new Chart(document.getElementById('barChart'),{
     }},
     scales:{
       x:{ grid:{display:false}, ticks:{...tickFont}, border:{display:false} },
-      y:{ grid:{color:gridColor,drawTicks:false}, ticks:{...tickFont, callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v}, border:{display:false}, beginAtZero:true }
+      y:{  position:'left',  grid:{color:gridColor,drawTicks:false}, ticks:{...tickFont, callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v}, border:{display:false}, beginAtZero:true, title:{display:true, text:'Impressions', color:'#757575', font:{size:10,family:'Roboto'}} },
+      y1:{ position:'right', grid:{display:false}, ticks:{...tickFont, callback:v=>v.toLocaleString()}, border:{display:false}, beginAtZero:true, title:{display:true, text:'Clicks / Reactions', color:'#757575', font:{size:10,family:'Roboto'}} }
     }
   }
 });
