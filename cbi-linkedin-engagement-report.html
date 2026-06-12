@@ -464,7 +464,7 @@ body {
   <!-- HERO -->
   <section class="hero">
     <div class="hero-eyebrow">Organic performance · 150 days</div>
-    <h1 class="hero-headline">Organic reach grew <em>4×</em> — and the audience that grew is clicking.</h1>
+    <h1 class="hero-headline">Organic reach <em>4×</em> higher since resuming posting in May</h1>
     <p class="hero-body">LinkedIn organic engagement from Jan 10 to Jun 8, 2026, split into three equal 50-day segments to surface momentum, turning points, and what content is working.</p>
     <div class="hero-meta">Jan 10 – Jun 8, 2026 &nbsp;·&nbsp; Organic data only &nbsp;·&nbsp; Sponsored metrics excluded</div>
   </section>
@@ -611,7 +611,7 @@ body {
       </div>
       <div class="insight-card">
         <div class="insight-stat teal">May 6</div>
-        <div class="insight-label">One post outperformed all of S1</div>
+        <div class="insight-label">AI 100 post outperformed all of S1</div>
         <div class="insight-body">The May 6 spike (4,760 impressions, 450 clicks) exceeded S1's entire 50-day total on its own.</div>
       </div>
       <div class="insight-card">
@@ -629,24 +629,20 @@ body {
 
   <!-- TAKEAWAYS -->
   <section class="section">
-    <div class="section-eyebrow">Recommendations</div>
-    <h2 class="section-title">What to do with this</h2>
+    <div class="section-eyebrow">NEXT STEPS</div>
+    <h2 class="section-title">Observations</h2>
     <ul class="takeaway-list">
       <li class="takeaway-item">
         <span class="takeaway-num">01</span>
-        <span><strong>Identify what changed in late April and replicate it.</strong> The inflection is clear — impressions and CTR both accelerated starting around Apr 20. Audit content type, topic, and posting time from that period and build a repeatable playbook from it.</span>
+        <span>The lists are popular -- and posting is of course better than not posting. Question is how to weigh the opportunity cost of posting, vs upside</span>
       </li>
       <li class="takeaway-item">
         <span class="takeaway-num">02</span>
-        <span><strong>Dissect the May 5–8 breakout specifically.</strong> Four consecutive high-impression days suggest a content series or trending topic, not a one-off. Understanding what drove that run is the highest-leverage analysis available right now.</span>
+        <span>At $300 typical CPM for LinkedIn ads, the 25k May-June organic pageviews have an equivalent ad value of ~$7500</span>
       </li>
       <li class="takeaway-item">
         <span class="takeaway-num">03</span>
-        <span><strong>Track reposts as a leading indicator.</strong> At 17 total reposts in S3 the absolute number is still small — but it's growing and predicts future organic reach. Add it to your weekly reporting cadence.</span>
-      </li>
-      <li class="takeaway-item">
-        <span class="takeaway-num">04</span>
-        <span><strong>S2's low impressions may reflect a content gap, not an audience problem.</strong> Engagement rate was present; impressions were just low. If posting volume or topic range dipped during March–April, that's a recoverable gap — not evidence of declining interest.</span>
+        <span>I propose we continue the posting, automate more steps – use MCP to "grab 5 up-and-coming leaders in [niche that relates to topic of newsjack]"</span>
       </li>
     </ul>
   </section>
@@ -680,13 +676,13 @@ function avgEng(arr){ const v=arr.map(d=>Math.max(0,d.engRate)).filter(v=>v>0); 
 
 /* ── KPIs ── */
 const totImp=sumPos(raw,'impressions'), totClk=sumPos(raw,'clicks'), totRea=sumPos(raw,'reactions');
-document.getElementById('k-imp').textContent = totImp >= 1000 ? (totImp/1000).toFixed(1)+'K' : totImp.toLocaleString();
-document.getElementById('k-clk').textContent = totClk.toLocaleString();
-document.getElementById('k-rea').textContent = totRea.toLocaleString();
+document.getElementById('k-imp').textContent = '97.5K';
+document.getElementById('k-clk').textContent = '2,487';
+document.getElementById('k-rea').textContent = '839';
 const ctr3val = (sumPos(segs[2],'clicks')/sumPos(segs[2],'impressions')*100).toFixed(1)+'%';
 document.getElementById('k-ctr').textContent = ctr3val;
 document.getElementById('ins-ctr3').textContent = ctr3val;
-document.getElementById('ins-social').textContent = sumPos(segs[2],'comments') + sumPos(segs[2],'reposts');
+document.getElementById('ins-social').textContent = '36';
 
 /* ── SEGMENT TABLE ── */
 const tbody = document.getElementById('seg-tbody');
