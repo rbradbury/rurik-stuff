@@ -286,7 +286,7 @@ body {
   margin-left: 8px;
   vertical-align: middle;
 }
-.delta-up { color: var(--ds-green); font-size: 12px; margin-left: 4px; }
+.delta-up { color: var(--ds-green); font-size: 11px; font-weight: 600; margin-right: 6px; }
 
 /* ── CHART CARD ── */
 .chart-card {
@@ -785,7 +785,7 @@ segs.forEach((seg,i)=>{
         ${i===2?'<span class="badge-latest">New strategy</span>':''}
       </span>
     </td>
-    <td>${imp.toLocaleString()}${pct}</td>
+    <td>${pct}${imp.toLocaleString()}</td>
     <td>${clk.toLocaleString()}</td>
     <td>${ctrPct(seg)}</td>
     <td>${rea.toLocaleString()}</td>
