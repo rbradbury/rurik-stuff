@@ -494,6 +494,9 @@ body {
   border-top: 1px solid var(--color-border);
 }
 .post-strip-meta strong { color: var(--color-text); }
+
+.leads-strip .post-strip-count { color: var(--grey-six); font-size: 28px; }
+.leads-strip .post-strip-cell.latest .post-strip-count { color: var(--grey-six); }
 </style>
 </head>
 <body>
@@ -555,7 +558,8 @@ body {
   </div>
 
   <!-- LEADS STRIP -->
-  <div class="post-strip">
+  <div style="font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); margin-bottom:var(--space-2);">Leads from LinkedIn</div>
+  <div class="post-strip leads-strip">
     <div class="post-strip-cell">
       <div class="post-strip-header">
         <span class="post-strip-dot" style="background:#4cabce"></span>
@@ -572,7 +576,7 @@ body {
       <div class="post-strip-count">8</div>
       <div class="post-strip-label">leads</div>
     </div>
-    <div class="post-strip-cell latest">
+    <div class="post-strip-cell">
       <div class="post-strip-header">
         <span class="post-strip-dot" style="background:#0a4663"></span>
         Apr 20 – Jun 8
