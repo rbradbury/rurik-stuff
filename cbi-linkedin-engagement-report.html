@@ -453,6 +453,18 @@ body {
   gap: var(--space-3);
   margin: 0 0 var(--space-5);
 }
+.post-strip.full-width {
+  margin-left: calc(-1 * var(--space-5));
+  margin-right: calc(-1 * var(--space-5));
+  gap: 0;
+}
+.post-strip.full-width .post-strip-cell {
+  border-radius: 0;
+  border-right: none;
+}
+.post-strip.full-width .post-strip-cell:last-child {
+  border-right: 1px solid var(--color-border);
+}
 .post-strip-cell {
   background: var(--grey-one);
   border: 1px solid var(--color-border);
@@ -528,7 +540,7 @@ body {
 
   <!-- POST VOLUME STRIP -->
   <h2 class="section-title">Number of organic posts published</h2>
-  <div class="post-strip">
+  <div class="post-strip full-width">
     <div class="post-strip-cell">
       <div class="post-strip-header">
         <span class="post-strip-dot" style="background:#4cabce"></span>
