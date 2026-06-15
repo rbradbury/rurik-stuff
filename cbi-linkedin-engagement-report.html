@@ -557,36 +557,6 @@ body {
     </div>
   </div>
 
-  <!-- LEADS STRIP -->
-  <h2 class="section-title">Organic leads from LinkedIn</h2>
-  <p style="font-size:14px; color:var(--grey-five); margin: -20px 0 20px; font-style:italic;">Note: metrics based on HubSpot approximation — a new attribution system will give a clearer view.</p>
-  <div class="post-strip leads-strip">
-    <div class="post-strip-cell">
-      <div class="post-strip-header">
-        <span class="post-strip-dot" style="background:#4cabce"></span>
-        Jan 10 – Feb 28
-      </div>
-      <div class="post-strip-count">12</div>
-      <div class="post-strip-label">leads</div>
-    </div>
-    <div class="post-strip-cell">
-      <div class="post-strip-header">
-        <span class="post-strip-dot" style="background:#017b90"></span>
-        Mar 1 – Apr 19
-      </div>
-      <div class="post-strip-count">8</div>
-      <div class="post-strip-label">leads</div>
-    </div>
-    <div class="post-strip-cell">
-      <div class="post-strip-header">
-        <span class="post-strip-dot" style="background:#0a4663"></span>
-        Apr 20 – Jun 8
-      </div>
-      <div class="post-strip-count">11</div>
-      <div class="post-strip-label">leads</div>
-    </div>
-  </div>
-
   <!-- SEGMENT COMPARISON -->
   <section class="section">
     <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--space-4);">LinkedIn organic engagement from Jan 10 to Jun 8, 2026, split into three equal 50-day segments to surface momentum, turning points, and what content is working.</p>
@@ -604,11 +574,13 @@ body {
             <th>Comments</th>
             <th>Reposts</th>
             <th>Avg eng. rate</th>
+            <th>Org. leads*</th>
           </tr>
         </thead>
         <tbody id="seg-tbody"></tbody>
       </table>
     </div>
+    <p style="font-size:12px; color:var(--grey-five); margin-top:8px; font-style:italic;">* HubSpot approximation — new attribution system will give a clearer view.</p>
   </section>
 
   <!-- CHART 1 -->
@@ -775,6 +747,7 @@ segs.forEach((seg,i)=>{
     <td>${sumPos(seg,'comments')}</td>
     <td>${Math.max(0,sumPos(seg,'reposts'))}</td>
     <td>${avgEng(seg)}</td>
+    <td>${[12,8,11][i]}</td>
   `;
   tbody.appendChild(tr);
 });
