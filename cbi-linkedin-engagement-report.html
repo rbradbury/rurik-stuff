@@ -754,7 +754,7 @@ function avgEng(arr){ const v=arr.map(d=>Math.max(0,d.engRate)).filter(v=>v>0); 
 const totImp=sumPos(raw,'impressions'), totClk=sumPos(raw,'clicks'), totRea=sumPos(raw,'reactions');
 const ctr3val = (sumPos(segs[2],'clicks')/sumPos(segs[2],'impressions')*100).toFixed(1)+'%';
 document.getElementById('ins-ctr3').textContent = ctr3val;
-document.getElementById('ins-social').textContent = '36';
+
 
 /* ── SEGMENT TABLE ── */
 const tbody = document.getElementById('seg-tbody');
